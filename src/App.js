@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 // import pages
 import Home from "./pages/Home/Home";
 import Kosakata from "./pages/Kosakata/Kosakata.jsx";
+import DaftarPelajaran from "./pages/Pelajaran/Index.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/kosakata" element={<Kosakata/>}/>
+          <Route path="/pelajaran" element={<DaftarPelajaran />} />
         </Routes>
       </Router>
     </div>

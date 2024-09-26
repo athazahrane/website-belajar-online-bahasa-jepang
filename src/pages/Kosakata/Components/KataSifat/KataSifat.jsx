@@ -31,7 +31,7 @@ function KataSifat() {
 
     const filteredKataSifats = KataSifats.filter(kosakata =>
         (kosakata.arti && kosakata.arti.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (kosakata.kosakata && kosakata.kosakata.toLowerCase().includes(searchTerm.toLowerCase())) // Memperbaiki dari kata ke kosakata
+        (kosakata.kosakata && kosakata.kosakata.toLowerCase().includes(searchTerm.toLowerCase()))
     );
 
     return (
@@ -52,7 +52,7 @@ function KataSifat() {
                             return (
                                 <TableRow hover role="checkbox" tabIndex={-1} key={kosakata.id}>
                                     <TableCell>{index + 1 + page * rowsPerPage}</TableCell>
-                                    <TableCell>{kosakata.kosakata}</TableCell> {/* Memperbaiki dari kata ke kosakata */}
+                                    <TableCell>{kosakata.kosakata}</TableCell>
                                     <TableCell>{kosakata.arti}</TableCell>
                                     <TableCell>{kosakata.kategori}</TableCell>
                                 </TableRow>

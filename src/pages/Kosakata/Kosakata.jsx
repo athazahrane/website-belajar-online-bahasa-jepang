@@ -5,6 +5,8 @@ import KataKerja from "./Components/Katakerja/KataKerja";
 import KataBenda from './Components/KataBenda/KataBenda';
 import KataSifat from './Components/KataSifat/KataSifat';
 
+import Footer from '../../components/Footer/Footer';
+
 export default function Kosakata() {
     return (
         <section className="kosakata-section">
@@ -41,6 +43,7 @@ export default function Kosakata() {
                     <KataSifat />
                 </div>
             </main>
+            <Footer />
         </section>
     )
 }

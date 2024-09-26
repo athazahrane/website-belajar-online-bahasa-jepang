@@ -7,6 +7,7 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import { cards } from './CardData'
 import Logo from '../../images/logo.png'
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
 
@@ -64,31 +65,7 @@ function Home() {
             </main>
 
             {/* footer */}
-            <footer className="footer">
-                <div className="footer-1">
-                    <img src={Logo} alt="Japanext" />
-                    <p>
-                        Belajar bahasa Jepang dengan cara interaktif dan menyenangkan! Kuasai kosakata dan tata bahasa N5 dan N4. Bergabunglah sekarang
-                    </p>
-                </div>
-                <div className="footer-2">
-                    <h2>Usefull Links</h2>
-                    <ul>
-                        <li className="li-footer">
-                            <Link className="footer-link" to='/'>Home</Link>
-                        </li>
-                        <li className="li-footer">
-                            <Link className="footer-link" to='/kosakata'>Daftar Kosakata</Link>
-                        </li>
-                        <li className="li-footer">
-                            <Link className="footer-link" to='/pelajaran'>Daftar Pelajaran</Link>
-                        </li>
-                        <li className="li-footer">
-                            <Link className="footer-link" to='/contact'>Kontak Kami</Link>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
+            <Footer />
 
         </div>
     )
