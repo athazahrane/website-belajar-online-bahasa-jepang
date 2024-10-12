@@ -26,10 +26,9 @@ function KataKerja() {
 
     const handleSearchChange = (term) => {
         setSearchTerm(term);
-        setPage(0); // Reset halaman ke 0 setiap kali pencarian dilakukan
+        setPage(0);
     };
 
-    // Filter Kosakatas berdasarkan searchTerm
     const filteredKosakatas = Kosakatas.filter(kosakata => 
         kosakata.kata.toLowerCase().includes(searchTerm.toLowerCase()) ||
         kosakata.arti.toLowerCase().includes(searchTerm.toLowerCase())

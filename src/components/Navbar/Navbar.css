@@ -68,7 +68,14 @@ li {
 }
 
 .hamburger input {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 38px;
+  opacity: 0;
+  z-index: 999;
 }
 
 .hamburger svg {

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
-import Logo from '../../images/logo.png'
-import './Navbar.css'
-import { checkboxClasses } from "@mui/material"
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Logo from '../../images/logo.png';
+import './Navbar.css';
 
 function Navbar() {
     const location = useLocation();
@@ -18,14 +17,16 @@ function Navbar() {
         const navContainer = document.querySelector('.navbar-container');
         let lastScrollTop = 0;
 
-        checkbox.addEventListener('change', function () {
+        const handleCheckboxChange = () => {
             setIsSidebarOpen(checkbox.checked);
             if (checkbox.checked) {
                 sidebar.classList.add('show');
             } else {
                 sidebar.classList.remove('show');
             }
-        });
+        };
+
+        checkbox.addEventListener('change', handleCheckboxChange);
 
         window.addEventListener('scroll', () => {
             const { scrollY } = window;
@@ -57,31 +58,38 @@ function Navbar() {
         document.addEventListener('mousedown', handleClickOutside);
 
         return () => {
-            checkbox.removeEventListener('change', function () { });
+            checkbox.removeEventListener('change', handleCheckboxChange);
             window.removeEventListener('scroll', () => { });
             document.removeEventListener('mousedown', handleClickOutside);
         };
 
     }, [location, isSidebarOpen]);
 
+    const handleLinkClick = () => {
+        const checkbox = document.querySelector('input[type="checkbox"]');
+        checkbox.checked = false;
+        setIsSidebarOpen(false);
+        document.querySelector('.navbar-nav').classList.remove('show');
+    };
+
     return (
         <header className="navbar-container visible">
             <img src={Logo} alt="Logo Web" className="navbar-brand" />
             <nav className="navbar-nav">
                 <ul>
-                    <li onClick={() => setActiveLink('home')}>
+                    <li onClick={() => { setActiveLink('home'); handleLinkClick(); }}>
                         <i className="fa-solid fa-house icon-link"></i>
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
-                    <li onClick={() => setActiveLink('kosakata')}>
+                    <li onClick={() => { setActiveLink('kosakata'); handleLinkClick(); }}>
                         <i className="fa-solid fa-bookmark icon-link"></i>
                         <Link to="/kosakata" className="nav-link">Daftar Kosakata</Link>
                     </li>
-                    <li onClick={() => setActiveLink('pelajaran')}>
+                    <li onClick={() => { setActiveLink('pelajaran'); handleLinkClick(); }}>
                         <i className="fa-solid fa-book icon-link"></i>
                         <Link to="/pelajaran" className="nav-link">Daftar Pelajaran</Link>
                     </li>
-                    <li onClick={() => setActiveLink('contact')}>
+                    <li onClick={() => { setActiveLink('contact'); handleLinkClick(); }}>
                         <i className="fa-solid fa-phone icon-link"></i>
                         <Link to="/contact" className="nav-link">Kontak Kami</Link>
                     </li>

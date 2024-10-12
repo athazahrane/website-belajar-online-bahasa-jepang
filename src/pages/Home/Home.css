@@ -87,6 +87,9 @@
   flex-direction: column;
   gap: 10px;
 }
+.content-card h4 {
+  text-transform: capitalize;
+}
 .more {
   color: tomato;
   text-decoration: none;

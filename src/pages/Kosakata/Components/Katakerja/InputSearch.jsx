@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './input.css';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
@@ -11,8 +11,17 @@ function InputSearch({ onSearchChange }) {
     };
 
     const handleChange = (e) => {
-        setSearchTerm(e.target.value);
-        onSearchChange(e.target.value);
+        const value = e.target.value;
+        setSearchTerm(value);
+        onSearchChange(value);
+
+        // Tambah class active jika input terisi, hapus jika kosong
+        const inputSearch = e.target;
+        if (value.trim() !== '') {
+            inputSearch.classList.add('active');
+        } else {
+            inputSearch.classList.remove('active');
+        }
     };
 
     return (

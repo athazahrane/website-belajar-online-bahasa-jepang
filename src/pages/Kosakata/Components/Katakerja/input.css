@@ -11,6 +11,9 @@
     outline: none;
     width: 200px;
 }
+.form-control.active {
+    border-bottom: 1.5px solid tomato;  
+}
 .btn {
     border-radius: 3px;
     border: 1px solid tomato;

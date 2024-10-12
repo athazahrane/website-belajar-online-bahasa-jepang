@@ -7,6 +7,8 @@ import KataSifat from './Components/KataSifat/KataSifat';
 
 import Footer from '../../components/Footer/Footer';
 
+import { Link } from 'react-router-dom';
+
 export default function Kosakata() {
     return (
         <section className="kosakata-section">
@@ -42,6 +44,10 @@ export default function Kosakata() {
                     </p>
                     <KataSifat />
                 </div>
+
+                <a href="/kosakata/kosataka-dasar" className="more">
+                    Lihat kosakata dasar bahasa jepang lainnya <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </main>
             <Footer />
         </section>

@@ -35,7 +35,7 @@ function KataSifat() {
     );
 
     return (
-        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+        <Paper sx={{ width: '90%', overflow: 'hidden' }}>
             <InputSearch onSearchChange={handleSearchChange} />
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">
